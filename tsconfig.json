@@ -1,0 +1,18 @@
+{
+    "compilerOptions": {
+        "outDir": "./dist",             // destino de archivos
+        "rootDir": "./src",             // origen de archivos
+        "lib": ["ESNext"],              // libreria de javascript
+        "target": "ESNext",             // version de javascript
+        "moduleResolution": "nodenext", // resolucion de modulos
+        "module": "NodeNext",           // modulo de javascript
+        "strict": false,                // modo estricto
+        "sourceMap": true,              // creacion de sourcemap
+        "esModuleInterop": true,        // importar modulos CommonJS
+        "declaration": true,            // generacion de archivos .d.ts
+        "experimentalDecorators": true, // habilitar decoradores
+        "emitDecoratorMetadata": true,  // habilitar metadata de decoradores
+    },
+    "include": ["src/**/*.ts"],      // seleccion de archivos
+    "exclude": ["src/**/*.test.ts"]  // exclusion de archivos
+}
