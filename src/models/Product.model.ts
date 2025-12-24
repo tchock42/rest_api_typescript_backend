@@ -1,10 +1,10 @@
 import { Table, Column, Model, DataType, Default} from "sequelize-typescript";
 
-@Table({ tableName: "products"})
+@Table({ tableName: "products"})    // decorador para definir una tabla
 
-class Product extends Model{ // define las columnas, sus nombres (schemas) y sus tipos de datos
-    @Column ({                          //decorador de columna
-        type: DataType.STRING(100)      // tipo de datos
+class Product extends Model{ // define las columnas, sus nombres (schemas) y sus tipos de datos | extiende de Model
+    @Column ({                          // decorador para definir una columna
+        type: DataType.STRING(100)      // tipo de dato de la columna
     })
     declare name: String                        //nombre de la columna
 
@@ -13,7 +13,7 @@ class Product extends Model{ // define las columnas, sus nombres (schemas) y sus
     })
     declare price: number
 
-    @Default(true)
+    @Default(true)                      // valor true por defecto
     @Column({
         type: DataType.BOOLEAN
     })

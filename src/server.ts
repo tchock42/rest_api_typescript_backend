@@ -26,6 +26,7 @@ const server = express()            // crea el servidor
 // permitir conexiones
 const corsOptions: CorsOptions = {  // este código permite las conexiones CORS
     origin: (origin, callback) => {
+        console.log('Peticion desde:', origin)
         if(origin === process.env.FRONTEND_URL){    // carga el origen de la peticion del cliente
             callback(null, true)                    // permite conexión
         }else{
@@ -37,7 +38,7 @@ server.use(cors(corsOptions))       // usa la configuración anterior
 
 server.use(express.json());          // middleware para leer json
 server.use(morgan('dev'))           
-server.use('/api/products', router);    // usa el router en la ruta /api/products
+server.use('/api/products', router); // usa el router en la ruta /api/products para las peticiones de productos 
 
 /* ruta para pruebas
 // server.get('/api', (req, res) => {  // ruta /api para las pruebas de integración
