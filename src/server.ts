@@ -27,7 +27,7 @@ const server = express()            // crea el servidor
 const corsOptions: CorsOptions = {  // este código permite las conexiones CORS
     origin: (origin, callback) => {
         console.log('Peticion desde:', origin)
-        if(origin === process.env.FRONTEND_URL){    // carga el origen de la peticion del cliente
+        if(!origin || origin === process.env.FRONTEND_URL){    // carga el origen de la peticion del cliente
             callback(null, true)                    // permite conexión
         }else{
             callback(new Error('Error de CORS'))
